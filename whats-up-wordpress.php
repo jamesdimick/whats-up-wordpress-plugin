@@ -8,7 +8,7 @@ Author: James Dimick
 Author URI: http://www.jamesdimick.com/
 
 === VERSION HISTORY ===
-  01.**.10 - v1.0 - The first version
+  01.19.10 - v1.0 - The first version
 
 === LEGAL INFORMATION ===
   Copyright (C) 2010 James Dimick <mail@jamesdimick.com> - www.JamesDimick.com
