@@ -51,7 +51,8 @@ function wuw_init() {
 				$update_count = 0; if(!empty($update_plugins->response)) $update_count = count($update_plugins->response);
 				$num_posts = wp_count_posts('post', 'readable');
 				$num_comm = wp_count_comments();
-				$results = array(
+				header('Content-Type: application/json');
+				exit(json_encode(array(
 					'site_name' => (string)get_option('blogname'),
 					'site_url' => (string)site_url(),
 					'site_admin_url' => (string)admin_url(),
@@ -71,11 +72,9 @@ function wuw_init() {
 					'pending_comments' => (int)$num_comm->moderated,
 					'spam_comments' => (int)$num_comm->spam,
 					'trashed_comments' => (int)$num_comm->trash
-				);
-			} else $results = array('error' => 2);
-		} else $results = array('error' => 1);
-		header('Content-Type: application/json');
-		exit(json_encode($results));
+				)));
+			}
+		}
 	}
 }
 ?>
