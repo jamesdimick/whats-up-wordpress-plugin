@@ -30,8 +30,8 @@ Author URI: http://www.jamesdimick.com/
 register_activation_hook(__FILE__, 'wuw_activate');
 register_deactivation_hook(__FILE__, 'wuw_deactivate');
 add_action('init', 'wuw_init');
-function wuw_activate() { $admin_role = get_role('administrator'); if($admin_role->has_cap('whats_up_wordpress') === false) $admin_role->add_cap('whats_up_wordpress'); }
-function wuw_deactivate() { $admin_role = get_role('administrator'); if($admin_role->has_cap('whats_up_wordpress') === true) $admin_role->remove_cap('whats_up_wordpress'); }
+function wuw_activate(){$admin_role=get_role('administrator');if($admin_role->has_cap('whats_up_wordpress')===false)$admin_role->add_cap('whats_up_wordpress');}
+function wuw_deactivate(){$admin_role=get_role('administrator');if($admin_role->has_cap('whats_up_wordpress')===true)$admin_role->remove_cap('whats_up_wordpress');}
 function wuw_init() {
 	if(isset($_POST['whatsupwordpressusername']) && isset($_POST['whatsupwordpresspassword'])) {
 		$post_user = sanitize_user(trim($_POST['whatsupwordpressusername']));
